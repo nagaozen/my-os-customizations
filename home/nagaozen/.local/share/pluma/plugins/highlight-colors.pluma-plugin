@@ -1,0 +1,9 @@
+[Pluma Plugin]
+Loader=python
+Module=highlightcolors
+IAge=2
+Name=Evolved Highlight Colors
+Description=Highlight colors show what they look like.
+Authors=Fabio Zendhi Nagao <nagaozen@hotmail.com>\nhttp://zend.lojcomm.com.br/
+Copyright=Copyright © 2017 Fabio Zendhi Nagao
+Website=http://github.com/nagaozen/pluma-plugins/

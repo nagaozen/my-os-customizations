@@ -1,0 +1,9 @@
+[Pluma Plugin]
+Loader=python
+Module=highlightselected
+IAge=2
+Name=Evolved Highlight Selected
+Description=Highlight occurrences of the selected word.
+Authors=Fabio Zendhi Nagao <nagaozen@gmail.com>\nhttp://pluma.evolved.com.br/
+Copyright=Copyright © 2017 Fabio Zendhi Nagao
+Website=http://github.com/nagaozen/pluma-plugins/
