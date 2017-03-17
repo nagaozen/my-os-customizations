@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 
-# Pluma Macros plugin
+# Pluma Better Defaults plugin
 # Copyright (C) 2017 Fabio Zendhi Nagao
-# 
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
@@ -32,6 +32,7 @@ ui_str = """
 """
 
 class BetterDefaultsWindowHelper:
+
 	def __init__(self, plugin, window):
 		self._window = window
 		self._plugin = plugin
@@ -39,9 +40,9 @@ class BetterDefaultsWindowHelper:
 		self.install_ui()
 
 		for view in self._window.get_views():
-			view.set_smart_home_end(True)
+			self.activate_view(view)
 
-		self._tab_added_id = self._window.connect("tab_added", lambda w, t: t.get_view().set_smart_home_end(True))
+		self._tab_added_id = self._window.connect("tab_added", lambda w, t: self.activate_view(t.get_view()))
 		self._key_press_id = self._window.connect("key-press-event", self.on_key_press_event)
 
 	def deactivate(self):
@@ -49,7 +50,7 @@ class BetterDefaultsWindowHelper:
 		self._window.disconnect(self._tab_added_id)
 
 		for view in self._window.get_views():
-			view.set_smart_home_end(False)
+			self.deactivate_view(view)
 
 		self.uninstall_ui()
 
@@ -57,7 +58,15 @@ class BetterDefaultsWindowHelper:
 		self._plugin = None
 
 	def update_ui(self):
-		pass
+		# TODO: Use key press and button press events instead of update_ui
+		doc = self._window.get_active_document()
+		if doc:
+			bounds = doc.get_selection_bounds()
+			if bounds:
+				(liter, riter) = bounds
+				doc.set_search_text(doc.get_text(liter, riter), pluma.SEARCH_CASE_SENSITIVE)
+			else:
+				doc.set_search_text("", pluma.SEARCH_CASE_SENSITIVE)
 
 	def install_ui(self):
 		manager = self._window.get_ui_manager()
@@ -77,6 +86,43 @@ class BetterDefaultsWindowHelper:
 		manager.remove_action_group(self._action_group)
 
 		manager.ensure_update()
+
+	def activate_view(self, view):
+		view.set_smart_home_end(True)
+
+		view.set_data("vscrolling_helper", (0.0, 0.0))
+
+		size_allocate_id = view.connect("size-allocate", self.on_size_allocate)
+		view.set_data("on_size_allocate_id", size_allocate_id)
+
+		va = view.get_vadjustment()
+		value_change_id = va.connect("value_changed", self.on_value_changed)
+		view.set_data("on_value_changed_id", value_change_id)
+
+	def deactivate_view(self, view):
+		va = view.get_vadjustment()
+		va.disconnect( view.get_data("on_value_changed_id") )
+
+		view.disconnect( view.get_data("on_size_allocate_id") )
+
+		view.set_smart_home_end(False)
+
+	def on_size_allocate(self, view, allocation):
+		va = view.get_vadjustment()
+		vsz = va.get_upper() + ( va.get_page_size() / 2 )
+		if va.get_upper() > va.get_page_size():
+			va.set_upper(vsz)
+
+			if va.get_value() < view.get_data("vscrolling_helper")[1]:
+				va.set_value(view.get_data("vscrolling_helper")[1])
+
+			view.set_data("vscrolling_helper", (vsz, va.get_value()))
+
+	def on_value_changed(self, adjustment):
+		view = self._window.get_active_view()
+		va   = view.get_vadjustment()
+		if( va.get_upper() == view.get_data("vscrolling_helper")[0] ):
+			view.set_data( "vscrolling_helper", ( view.get_data("vscrolling_helper")[0], va.get_value() ) )
 
 	def duplicate_line(self, action):
 		doc = self._window.get_active_document()
@@ -136,3 +182,4 @@ class BetterDefaultsPlugin(pluma.Plugin):
 
 	def update_ui(self, window):
 		window.get_data(self.WINDOW_DATA_KEY).update_ui()
+
