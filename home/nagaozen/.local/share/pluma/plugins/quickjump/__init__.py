@@ -33,7 +33,6 @@ class QuickJumpWindowHelper:
 		self._plugin = None
 
 	def update_ui(self):
-#		doc = self._window.get_active_document()
 		pass
 
 class QuickJumpPlugin(pluma.Plugin):
