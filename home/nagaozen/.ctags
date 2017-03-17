@@ -1,0 +1,33 @@
+--langdef=sql
+--langmap=sql:.sql
+--regex-sql=/CREATE DATABASE (\S+)/\1/d,database/
+--regex-sql=/CREATE TABLE \[.*\]\.\[(\S+)\]/\1/t,db_table/
+--regex-sql=/CREATE PROC \[.*\]\.\[(\S+)\]/\1/p,db_procedure/
+--regex-sql=/CREATE VIEW \[.*\]\.\[(\S+)\]/\1/p,db_view/
+--regex-sql=/CREATE [ A-Za-z0-9]* INDEX (\S+)/\1/i,db_index/
+--regex-sql=/CREATE TRIGGER (\S+)/\1/r,db_trigger/
+--regex-sql=/CREATE FUNCTION \[.*\]\.\[(\S+)\]/\1/p,db_function/
+--regex-sql=/Type: (\S+)/\1/e,db_type/
+--regex-sql=/Template: (\S+)/\1/e,db_template/
+
+--langdef=js
+--langmap=js:.js
+--regex-js=/([A-Z]+[A-Za-z0-9._$]*)[ \t]*[:=][ \t]*React.createClass/\1/,class/
+--regex-js=/([A-Za-z0-9._$]*)[ \t]*[:=][ \t]*function\(/\1/,function/
+--regex-js=/function[ \t]*([A-Za-z0-9._$]*)[ \t]*\(/\1/,function/
+
+--langdef=jsx
+--langmap=jsx:.jsx
+--regex-jsx=/([A-Z]+[A-Za-z0-9._$]*)[ \t]*[:=][ \t]*React.createClass/\1/,class/
+--regex-jsx=/([A-Za-z0-9._$]*)[ \t]*[:=][ \t]*function\(/\1/,function/
+--regex-jsx=/function[ \t]*([A-Za-z0-9._$]*)[ \t]*\(/\1/,function/
+
+--langdef=asp
+--langmap=asp:.asp
+--regex-asp=/^[^']*(const|Const)[ \t]+([^ \t(']+)/\2/d,constant/
+--regex-asp=/^[ \t]*(class|Class)[ \t]+([^ \t(']+)/\2/c,class/
+--regex-asp=/^[^']*(function|Function)[ \t]+([^ \t(']+)[ \t]*\(/\2/f,function/
+--regex-asp=/^[^']*(sub|Sub)[ \t]+([^ \t(']+)/\2/s,subroutine/
+--regex-asp=/^[^']*(property|Property)[ \t]+((get|set|let|Get|Set|Let)[ \t]+([^ \t(']+))/\2/v,variable/
+--regex-asp=/^[ \t]*(private|public|Private|Public)[ \t]+([^ \t(']+)$/\2/v,variable/
+
