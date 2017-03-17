@@ -72,7 +72,6 @@ OBJECTS = qdos.$(OBJEXT) \
 	slang.$(OBJEXT) \
 	sort.$(OBJEXT) \
 	sml.$(OBJEXT) \
-	sql.$(OBJEXT) \
 	strlist.$(OBJEXT) \
 	tcl.$(OBJEXT) \
 	verilog.$(OBJEXT) \

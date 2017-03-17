@@ -48,7 +48,6 @@ SOURCES = \
 	slang.c \
 	sml.c \
 	sort.c \
-	sql.c \
 	strlist.c \
 	tcl.c \
 	tex.c \
@@ -109,7 +108,6 @@ OBJECTS = \
 	slang.$(OBJEXT) \
 	sml.$(OBJEXT) \
 	sort.$(OBJEXT) \
-	sql.$(OBJEXT) \
 	strlist.$(OBJEXT) \
 	tcl.$(OBJEXT) \
 	tex.$(OBJEXT) \

@@ -48,7 +48,6 @@
 	ShParser, \
 	SlangParser, \
 	SmlParser, \
-	SqlParser, \
 	TclParser, \
 	TexParser, \
 	VeraParser, \
