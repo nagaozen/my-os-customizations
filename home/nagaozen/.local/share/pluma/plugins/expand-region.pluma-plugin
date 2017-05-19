@@ -1,9 +1,0 @@
-[Pluma Plugin]
-Loader=python
-Module=expand-region
-IAge=2
-Name=Evolved Expand Region
-Description=Expand region increases the selected region by semantic units. Just keep pressing the key until it selects what you want.
-Authors=Fabio Zendhi Nagao <nagaozen@hotmail.com>\nhttp://zend.lojcomm.com.br/
-Copyright=Copyright © 2017 Fabio Zendhi Nagao
-Website=http://github.com/nagaozen/pluma-plugins/

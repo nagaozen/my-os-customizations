@@ -1,0 +1,9 @@
+[Gedit Plugin]
+Loader=python
+Module=better-defaults
+IAge=2
+Name=Evolved Gedit Better Defaults
+Description=Some minor tweaks to make gedit better.
+Authors=Fabio Zendhi Nagao <nagaozen@hotmail.com>\nhttp://gedit.evolved.com.br/
+Copyright=Copyright © 2011 Fabio Zendhi Nagao
+Website=http://github.com/nagaozen/gedit-plugins/

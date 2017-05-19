@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="ini">
+  <snippet>
+    <text><![CDATA[[Produto${1:000}]
+CFOP=${2:6101}
+Codigo=${3:00000}
+Descricao=${4:BLUSA}
+NCM=${5:62062000}
+Unidade=PCS
+Quantidade=${6:1}
+ValorUnitario=${7:0.00}
+ValorTotal=$<8:[6,7]: return float($7) * float($6)>
+vFrete=${9:0.00}
+ValorDesconto=${10:0.00}
+[ICMS$1]
+Origem=0
+CST=00
+ValorBase=$<11:[8,9]: return float($8) + float($9) >
+Aliquota=${12:7}
+Valor=$<[11]: return round( float($12) * float($11) ) / 100 >
+[IPI$1]
+CodigoEnquadramento=999
+CST=01
+[PIS$1]
+CST=01
+ValorBase=$8
+Aliquota=0.65
+Valor=$<[8]: return round( float($8) * 0.65) / 100  >
+[COFINS$1]
+CST=01
+ValorBase=$8
+Aliquota=3.00
+Valor=$<[8]: return round( float($8) * 3 ) / 100 >
+$0]]></text>
+    <tag>pvenda</tag>
+    <description>ACBrNFe_Produto</description>
+  </snippet>
+</snippets>

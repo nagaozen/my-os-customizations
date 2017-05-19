@@ -1,9 +1,0 @@
-[Pluma Plugin]
-Loader=python
-Module=better-defaults
-IAge=2
-Name=Evolved Pluma Better Defaults
-Description=Some minor tweaks to make pluma better.
-Authors=Fabio Zendhi Nagao <nagaozen@hotmail.com>\nhttp://pluma.evolved.com.br/
-Copyright=Copyright © 2011 Fabio Zendhi Nagao
-Website=http://github.com/nagaozen/pluma-plugins/

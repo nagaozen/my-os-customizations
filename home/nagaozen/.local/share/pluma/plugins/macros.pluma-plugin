@@ -1,9 +1,0 @@
-[Pluma Plugin]
-Loader=python
-Module=macros
-IAge=2
-Name=Evolved Macros
-Description=A way to record and replay macros.
-Authors=Fabio Zendhi Nagao <nagaozen@hotmail.com>\nhttp://zend.lojcomm.com.br/
-Copyright=Copyright © 2011 Fabio Zendhi Nagao
-Website=http://github.com/nagaozen/pluma-plugins/

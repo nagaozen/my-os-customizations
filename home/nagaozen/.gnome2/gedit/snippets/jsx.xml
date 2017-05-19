@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="jsx">
+  <snippet>
+    <text><![CDATA[componentDidMount: function() {
+	$0
+},]]></text>
+    <tag>cdm</tag>
+    <description>cdm</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[componentDidUpdate: function(prevProps, prevState) {
+	$0
+},]]></text>
+    <tag>cdup</tag>
+    <description>cdup</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[var cx = React.addons.classSet;
+var ${1:classes} = cx({
+	${2:key}: ${3:value}$0
+});]]></text>
+    <tag>cs</tag>
+    <description>cs</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[componentWillMount: function() {
+	$0
+},]]></text>
+    <tag>cwm</tag>
+    <description>cwm</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[componentWillReceiveProps: function(nextProps) {
+	$0
+},]]></text>
+    <tag>cwr</tag>
+    <description>cwr</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[componentWillUpdate: function(nextProps, nextState) {
+	$0
+},]]></text>
+    <tag>cwu</tag>
+    <description>cwu</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[componentWillUnmount: function() {
+	$0
+},]]></text>
+    <tag>cwun</tag>
+    <description>cwun</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[React.findDOMNode(${1:refs})$0]]></text>
+    <tag>fdn</tag>
+    <description>fdn</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[forceUpdate(${1:callback});$0]]></text>
+    <tag>fup</tag>
+    <description>fup</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[getDefaultProps: function() {
+	return {
+		$0
+	};
+},]]></text>
+    <tag>gdp</tag>
+    <description>gdp</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[getInitialState: function() {
+	return {
+		${1:key}: ${2:value}$0
+	};
+},]]></text>
+    <tag>gis</tag>
+    <description>gis</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[isMounted()]]></text>
+    <tag>ism</tag>
+    <description>ism</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[this.props.$0]]></text>
+    <tag>props</tag>
+    <description>props</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[propTypes: {
+	${1:prop}: React.PropTypes.${2:string}$0
+},]]></text>
+    <tag>pt</tag>
+    <description>pt</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[var ${1:Component} = React.createClass({
+
+	render: function() {
+		return (
+			${2:<div />}$0
+		);
+	}
+
+});]]></text>
+    <tag>rcc</tag>
+    <description>rcc</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[this.refs.$0]]></text>
+    <tag>refs</tag>
+    <description>refs</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[render: function() {
+	return (
+		${1:<div />}$0
+	);
+}]]></text>
+    <tag>ren</tag>
+    <description>ren</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[shouldComponentUpdate: function(nextProps, nextState) {
+	$0
+},]]></text>
+    <tag>scu</tag>
+    <description>scu</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[this.setState({
+	${1:key}: ${2:value}
+});]]></text>
+    <tag>sst</tag>
+    <description>sst</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[this.state.$0]]></text>
+    <tag>state</tag>
+    <description>state</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[cx({
+	${1:key}: ${2:value}$0
+});]]></text>
+    <tag>cx</tag>
+    <description>cx</description>
+  </snippet>
+</snippets>

@@ -1,0 +1,512 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets>
+  <snippet>
+    <text><![CDATA[The MIT License
+Copyright (C) ${1:2009} ${2:Fabio Zendhi Nagao}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.]]></text>
+    <tag>mit</tag>
+    <description>mit</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[This file is part of ${1:project}.
+Copyright (C) ${2:2009} ${3:Fabio Zendhi Nagao}
+
+$1 is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+$1 is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with $1. If not, see <http://www.gnu.org/licenses/>.]]></text>
+    <tag>lgpl</tag>
+    <description>lgpl</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<${1:tag}>$0</$1>]]></text>
+    <tag>&lt;</tag>
+    <description>SGML tag</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<package>
+    <job>
+        <script language="javascript" src="inc_mootools.js"></script>
+        <script language="javascript" src="inc_tools.js"></script>
+        <script language="javascript">
+
+<![CDATA[
+
+var argv = WScript.arguments;
+if( argv.length != 0 )
+    WScript.echo("Error: Invalid script call\nUsage: cscript //NOLOGO ${1:name}.wsf");
+else {
+    try {
+
+/* --[start coding here]----------------------------------------------------- */
+
+$0
+
+/* --[stop coding here]------------------------------------------------------ */
+
+    } catch(E) {
+        WScript.echo([
+            E.number,
+            E.description
+        ].join('\n'));
+    }
+}
+]]]]><![CDATA[>
+
+        </script>
+    </job>
+</package>]]></text>
+    <tag>wsf</tag>
+    <description>wsf</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[Evolved.ERP.Modules.${1:namespace}.${2:moduleCollection} = {
+
+    /* --[ Window ]---------------------------------------------------------- */
+
+    sizes: {
+        "List": { "width": 1024, "height": 768 },
+        "Edit": { "width": 1024, "height": 768 }
+    },
+
+    initialize: function(view) {
+        var Me = Evolved.ERP.Modules.$1.$2,
+            args = Array.prototype.slice.apply(arguments, [1]);
+
+        Me.view = view || "List";
+
+        if(!Me.instance) {
+            Me.instance = new MUI.Window($merge(Evolved.ERP.BASE_WINDOW_OPTIONS, Me.sizes[Me.view], {
+                trigger: "Evolved.ERP.Modules.$1.$2.initialize",
+                id: "$1_$2",
+
+                onFocus: function() {
+                    Evolved.ERP.KeyboardManager.instances.each(function(kb) {
+                        kb.deactivate();
+                    });
+                    if(Me[Me.view] && Me[Me.view].KeyboardHandler) {
+                        Me[Me.view].KeyboardHandler.activate();
+                    }
+                },
+
+                onBlur: function() {
+                    if(Me[Me.view] && Me[Me.view].KeyboardHandler) {
+                        Me[Me.view].KeyboardHandler.deactivate();
+                    }
+                },
+
+                onClose: function() {
+                    if( Me.removeAllDockItems ) {
+                        Me.removeAllDockItems();
+                    }
+                    delete Me.instance;
+                },
+
+                onContentLoaded: function() {
+                    new MUI.Column({
+                        container: "$1_$2_contentWrapper",
+                        id: "$1_$2_VBox",
+                        placement: "main",
+                        sortable: false
+                    });
+
+                    new MUI.Panel({
+                        column: "$1_$2_VBox",
+                        id: "$1_$2_VBox_0",
+                        addClass: "shadow-scroll-fx",
+                        header: false,
+                        resizable: false
+                    });
+
+                    new MUI.Panel({
+                        column: "$1_$2_VBox",
+                        addClass: "dockbar_container",
+                        id: "$1_$2_VBox_1",
+                        height: Evolved.ERP.DOCKBAR_HEIGHT,
+                        header: false,
+                        resizable: false,
+                        scrollbars: false,
+                        padding: { top: 0, right: 0, bottom: 0, left: 0 },
+                        content: ''
+                    });
+
+                    Me.Dockbar = new Evolved.UI.Dockbar( MUI.Panels.instances["$1_$2_VBox_1"].contentEl );
+
+                    Me[Me.view].initialize.delay(100, this, args);
+                }
+            }));
+        } else {
+            Me.removeAllDockItems();
+            Me[Me.view].initialize.delay(100, this, args);
+            Me.instance.windowEl.shake();
+            setTimeout( MUI.focusWindow.pass(Me.instance.windowEl, Me.instance), 10 );
+        }
+    },
+
+    addDockItem: function(data) {
+        var Me = Evolved.ERP.Modules.$1.$2,
+
+            li = new Element("li"),
+            a = new Element("a", { "class": "dockbar_item_anchor", href: "#" }),
+            font = new Element("font", { "class": "icon dockbar_item", text: data.label });
+
+        li.adopt(a);
+        a.adopt(font);
+        Me.Dockbar.items.adopt(li);
+
+        a.addEvent("click", data.onClick);
+
+        return li;
+    },
+
+    removeAllDockItems: function() {
+        var Me = Evolved.ERP.Modules.$1.$2,
+
+            list = Me.Dockbar.items.getChildren();
+
+        if(Me.List.autoComplete && Me.List.autoComplete.choices) Me.List.autoComplete.choices.destroy();
+        if(Me.List.searchLabel) Me.List.searchLabel.destroy();
+        if(Me.List.search) Me.List.search.destroy();
+
+        Me.Dockbar.disappear();
+
+        list.each( function(entry) {
+            entry.destroy();
+        } );
+    },
+
+
+
+
+
+
+
+
+
+
+    /* --[ Views ]----------------------------------------------------------- */
+
+    List: {
+
+        initialize: function() {
+            var Win = Evolved.ERP.Modules.$1.$2,
+                Me = Win.List,
+
+                ct = 0;
+
+            Win.view = "List";
+            Win.instance.setTitle( \$T("$2") );
+
+            function onPartialLoaded() {
+                if(++ct === 2) {
+                    function addSearch() {
+                        Me.search = new Element("input", {
+                            "type": "search",
+                            "placeholder": \$T("DOCKBAR_OVERTEXT"),
+                            "value": ""
+                        });
+
+                        Me.search.addEvent("keypress", function(ev){
+                            if(ev.key == "enter") Me.onDockSearchClick(ev);
+                        });
+
+                        Me.search.injectBefore( Win.Dockbar.items );
+
+                        Me.search.setStyles({
+                            "display": "block",
+                            "width": 180,
+                            "margin-right": 10
+                        });
+
+                        Me.autoComplete = new Autocompleter.Request.JSON(Me.search, "/$<[2]:return $2.lower()>/search", {
+                             "minLength": 2,
+                             "zIndex": 1000
+                        });
+                    };
+
+                    [
+                        {label: "S", onClick: Me.onDockSearchClick},
+                        {label: "R", onClick: Me.onDockRefreshClick},
+                        {label: "+", onClick: Me.onDockAddClick},
+                        {label: "D", onClick: Me.onDockRemoveClick}
+                    ].each( Win.addDockItem );
+
+                    Win.Dockbar.appear( addSearch );
+                }
+            }
+
+            new MUI.Column({
+                container: "$1_$2_VBox_0",
+                id: "$1_$2_Main",
+                placement: "main"
+            });
+
+            new MUI.Column({
+                container: "$1_$2_VBox_0",
+                id: "$1_$2_Aside",
+                placement: "right",
+                width: 200,
+                resizeLimit: [80, 320],
+                isCollapsed: true
+            });
+
+            new MUI.Panel({
+                column: "$1_$2_Main",
+                id: "$1_$2_Main_Content",
+                header: false,
+                contentURL: Evolved.ERP.APP_URL + "/$<[2]:return $2.lower()>/",
+                onContentLoaded: onPartialLoaded
+            });
+
+            new MUI.Panel({
+                column: "$1_$2_Aside",
+                id: "$1_$2_Aside_Content",
+                addClass: "splitSidePanel",
+                header: false,
+                padding: {
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
+                contentURL: Evolved.ERP.APP_URL + "/app/views/xhtml/lipsum.html",
+                onContentLoaded: onPartialLoaded
+            });
+        },
+
+        onListLinkClick: function(id) {
+            var Win = Evolved.ERP.Modules.$1.$2,
+                Me = Win.List;
+
+            function _actions() {
+                Win.removeAllDockItems();
+                Win.instance.resize(Win.sizes["Edit"]);
+                Win.Edit.initialize(id);
+            }
+
+            Win.Dockbar.disappear(_actions);
+        },
+
+        onDockRefreshClick: function(ev) { ev.stop();
+            var Win = Evolved.ERP.Modules.$1.$2,
+                Me = Win.List;
+
+            MUI.updateContent({
+                method: "get",
+                url: "/$<[2]:return $2.lower()>/",
+                element: MUI.Panels.instances["$1_$2_Main_Content"].panelEl
+            });
+        },
+
+        onDockAddClick: function(ev) { ev.stop();
+            var Win = Evolved.ERP.Modules.$1.$2,
+                Me = Win.List;
+
+            function _actions() {
+                Win.removeAllDockItems();
+                Win.instance.resize(Win.sizes["Edit"]);
+                Win.Edit.initialize();
+            }
+
+            Win.Dockbar.disappear(_actions);
+        },
+
+        onDockRemoveClick: function(ev) { ev.stop();
+            var Win = Evolved.ERP.Modules.$1.$2,
+                Me = Win.List,
+
+                win  = Win.instance.windowEl,
+                frm  = win.getElement("#$1_$2_List_Form"),
+                tbl  = frm.getElement("#$1_$2_List_Table"),
+                data = frm.toQueryString(),
+
+                error_msg = '';
+
+            if( data.length > 0 ) {
+                new Request.JSON({
+                    url: "/$<[2]:return $2.lower()>/trash",
+                    data: data,
+                    onSuccess: function(Ret, json) {// handles HTTP response 200
+                        var i, len;
+                        if( Ret.status === "SUCCESS" ) {
+                            var els = win.getElements("input.checkbox");
+                            for(i = 0, len = els.length; i < len; i++) {
+                                if( els[i].checked && Ret.completed.contains( els[i].value.toInt() ) ) {
+                                    (function(){
+                                        var tr = els[i].getParent().getParent();
+
+                                        tr.set("morph", {
+                                            onComplete: function(){
+                                                tr.destroy();
+                                                tbl.retrieve("HtmlTable").updateZebras();
+                                            }
+                                        });
+
+                                        tr.morph({
+                                            height: 0,
+                                            opacity: 0
+                                        });
+                                    })();// creating a closure for the tr -- multiple remove fix
+                                }
+                            }
+                        } else {
+                            error_msg  = "<p>" + \$T("Unable to remove some items due to the following problem(s):") + "</p>";
+                            error_msg += "<ul><li>" + Ret.errors.join("</li><li>") + "</li></ul>";
+                            new MUI.Modal({ content: error_msg });
+                        }
+                    },
+                    onFailure: function() {// handles other HTTP responses (404, 500;100)
+                        error_msg = "<p>Failure trying to communicate with the server.</p>";
+                        new MUI.Modal({ content: error_msg });
+                    }
+                }).send();
+            }
+        },
+
+        onDockSearchClick: function(ev) { ev.stop();
+            var Win = Evolved.ERP.Modules.$1.$2,
+                Me = Win.List;
+
+            MUI.updateContent({
+                element: MUI.Panels.instances["$1_$2_Main_Content"].panelEl,
+                url: "/$<[2]:return $2.lower()>/filter",
+                method: "post",
+                data: { "fragment": Me.search.value }
+            });
+        }
+
+    },
+
+
+
+
+
+
+
+
+
+
+    Edit: {
+
+        initialize: function(id) {
+            var Win = Evolved.ERP.Modules.$1.$2,
+                Me = Win.Edit,
+
+                ct = 0,
+                isNew = (id ? false : true);
+
+            Win.view = "Edit";
+            Win.instance.setTitle( \$T("${3:module}") );
+
+            function onPartialLoaded() {
+                if(++ct === 1) {
+                    [
+                        {label: "B", onClick: Me.onDockBackClick},
+                        {label: "A", onClick: Me.onDockAcceptClick}
+                    ].each( Win.addDockItem );
+
+                    Win.Dockbar.appear();
+                }
+            }
+
+            MUI.updateContent({
+                element: MUI.Panels.instances["$1_$2_VBox_0"].panelEl,
+                url: "/$<[3]:return $3.lower()>/{method}/{id}".substitute({ method: ( isNew ? "add" : "edit" ), id: ( isNew ? "" : id ) }),
+                onContentLoaded: onPartialLoaded
+            });
+        },
+
+        onDockBackClick: function(ev) { ev.stop();
+            var Win = Evolved.ERP.Modules.$1.$2,
+                Me = Win.Edit;
+
+            function _actions() {
+                Win.removeAllDockItems();
+                Win.instance.resize(Win.sizes["List"]);
+                Win.List.initialize();
+            }
+
+            Win.Dockbar.disappear(_actions);
+        },
+
+        onDockAcceptClick: function(ev) { ev.stop();
+            var Win = Evolved.ERP.Modules.$1.$2,
+                Me = Win.Edit,
+
+                win  = Win.instance.windowEl,
+                frm  = win.getElement("#$1_$3_Edit_Form"),
+                code = frm.getElements("input.$<[3]:return $3.lower()>-code")[0],
+                sub  = frm.getElement("#$1_$3_Edit_Form_Submit"),
+
+                error_msg = '';
+
+            if( !frm.checkValidity() ) {
+                sub.click();
+                return false;
+            }
+
+            frm.getElements("div.$<[3]:return $3.lower()>-variants input").each(function(input){
+                var ref         = input.value.split('.');
+                ref[0]          = code.value;
+                input.value = ref.join('.');
+            });
+
+            new Request.JSON({
+                url: "/$<[3]:return $3.lower()>/save",
+                data: frm.toQueryString(),
+                onSuccess: function(Ret, json) {
+                    if( Ret.status === "SUCCESS" ) {
+                        Me.onDockBackClick(ev);
+                        Evolved.ERP.EventsManager.fireEvent("$1_$3_Edit_onSave", Ret.id$3);
+                    } else {
+                        error_msg  = "<p>" + \$T("Unable to save changes due to the following problem(s):") + "</p>";
+                        error_msg += "<ul><li>" + Ret.errors.join("</li><li>") + "</li></ul>"
+                        new MUI.Modal({ content: error_msg });
+                    }
+                },
+                onFailure: function() {
+                    error_msg = "<p>Failure trying to communicate with the server.</p>";
+                    new MUI.Modal({ content: error_msg });
+                }
+            }).send();
+        }
+
+    }
+
+}
+]]></text>
+    <tag>erpjsmod</tag>
+    <description>erpjsmod</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA["$1": ["$2", \$$3],$0]]></text>
+    <tag>e</tag>
+    <description>temp</description>
+  </snippet>
+</snippets>
