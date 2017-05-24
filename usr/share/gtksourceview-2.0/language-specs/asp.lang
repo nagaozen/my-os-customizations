@@ -24,6 +24,7 @@
 	<metadata>
 		<property name="mimetypes">text/x-asp;application/x-asp;application/x-asap</property>
 		<property name="globs">*.asp</property>
+		<property name="line-comment-start">'</property>
 	</metadata>
 	<styles>
 		<style id="preprocessor" _name="Preprocessor"  map-to="def:preprocessor"/>
