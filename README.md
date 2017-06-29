@@ -21,6 +21,14 @@ $ yaourt -S gconf gcolor2 pygtksourceview2 enchant desktop-file-utils iso-codes 
 $ yaourt -S gnome-doc-utils intltool
 ```
 
+then, compile:
+
+```sh
+$ ./configure
+$ make
+$ sudo make install
+```
+
 # Themes and Icons
 
 ```sh
