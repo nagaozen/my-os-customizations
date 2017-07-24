@@ -22,6 +22,8 @@ $ yaourt -S gnome-doc-utils intltool
 
 $ EXPORT PYTHON=/usr/bin/python2
 $ ./configure --disable-scrollkeeper --enable-python
+$ make LDFLAGS="$LDFLAGS -lgmodule-2.0 -lICE"
+$ sudo make install
 ```
 
 then, compile:
