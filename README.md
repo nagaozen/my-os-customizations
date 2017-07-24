@@ -19,18 +19,14 @@ Just merge all folders, except `/home/` as mentioned before, to the file system 
 ```sh
 $ yaourt -S gconf gcolor2 pygtksourceview2 enchant desktop-file-utils iso-codes libsm python2
 $ yaourt -S gnome-doc-utils intltool
-
-$ EXPORT PYTHON=/usr/bin/python2
-$ ./configure --disable-scrollkeeper --enable-python
-$ make LDFLAGS="$LDFLAGS -lgmodule-2.0 -lICE"
-$ sudo make install
 ```
 
 then, compile:
 
 ```sh
-$ ./configure
-$ make
+$ export PYTHON=/usr/bin/python2
+$ ./configure --disable-scrollkeeper --enable-python
+$ make LDFLAGS="$LDFLAGS -lgmodule-2.0 -lICE"
 $ sudo make install
 ```
 
