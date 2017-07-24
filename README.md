@@ -24,6 +24,14 @@ $ EXPORT PYTHON=/usr/bin/python2
 $ ./configure --disable-scrollkeeper --enable-python
 ```
 
+then, compile:
+
+```sh
+$ ./configure
+$ make
+$ sudo make install
+```
+
 # Themes and Icons
 
 ```sh
@@ -36,13 +44,13 @@ $ yaourt papirus-libreoffice-theme
 
 ## Desktop Icons Positions
 
-If somehow your desktop icons are losing their positions between reboots, you can set their properties as `read-only`:
+If somehow your desktop icons are losing their positions between reboots, you can set their properties as `immutable`:
 
 ```sh
 $ sudo chattr +i ~/.config/xfce4/desktop/icons*
 ```
 
-Then, if you want to change their position again you need to turn them back to `writables`:
+Then, if you want to change their position again you need to turn `immutable` off:
 
 ```sh
 $ sudo chattr -i ~/.config/xfce4/desktop/icons*
