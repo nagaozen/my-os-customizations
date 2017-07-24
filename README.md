@@ -21,7 +21,15 @@ $ yaourt -S gconf gcolor2 pygtksourceview2 enchant desktop-file-utils iso-codes 
 $ yaourt -S gnome-doc-utils intltool
 ```
 
-then, compile:
+then, compile ctags:
+
+```sh
+$ ./configure
+$ make
+$ sudo make install
+```
+
+compile gedit:
 
 ```sh
 $ export PYTHON=/usr/bin/python2
@@ -30,12 +38,24 @@ $ make LDFLAGS="$LDFLAGS -lgmodule-2.0 -lICE"
 $ sudo make install
 ```
 
+copy gedit-plugins:
+
+```sh
+$ sudo cp -r usr /
+```
+
 # Themes and Icons
 
 ```sh
 $ sudo pacman -S adapta-maia-theme
 $ yaourt papirus-icon-theme-git
 $ yaourt papirus-libreoffice-theme
+```
+
+# Fonts
+
+```sh
+$ yaourt ttf-iosevka ttf-roboto
 ```
 
 # Fixes
