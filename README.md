@@ -64,12 +64,28 @@ $ yaourt ttf-iosevka ttf-roboto
 
 If somehow your desktop icons are losing their positions between reboots, you can set their properties as `immutable`:
 
+### quick method
+
 ```sh
-$ sudo chattr +i ~/.config/xfce4/desktop/icons*
+$ ./freeze_desktop.sh	
+```
+
+### manual method
+
+```sh
+$ chattr +i ~/.config/xfce4/desktop/icons*
 ```
 
 Then, if you want to change their position again you need to turn `immutable` off:
 
+### quick method
+
 ```sh
-$ sudo chattr -i ~/.config/xfce4/desktop/icons*
+$ ./unfreeze_desktop.sh	
+```
+
+### manual method
+
+```sh
+$ chattr -i ~/.config/xfce4/desktop/icons*
 ```
