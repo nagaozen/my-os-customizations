@@ -56,6 +56,7 @@ $ gconftool-2 --set "/apps/gnome-terminal/profiles/Default/use_theme_colors" --t
 $ gconftool-2 --set "/apps/gnome-terminal/profiles/Default/palette" --type string "#000000:#E06C75:#98c379:#d19a66:#61aeee:#c678dd:#56b6c2:#abb2bf:#5c6370:#e06c75:#98c379:#d19a66:#62afee:#c678dd:#56b6c2:#ffffff"
 $ gconftool-2 --set "/apps/gnome-terminal/profiles/Default/background_color" --type string "#282c34"
 $ gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string "#abb2bf"
+$ gconftool-2 --set "/apps/gnome-terminal/profiles/Default/font" --type string "Anka/Coder Narrow 10"
 ```
 
 # Fonts
