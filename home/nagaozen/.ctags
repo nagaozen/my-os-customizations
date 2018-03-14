@@ -21,9 +21,12 @@
 
 --langdef=jsx
 --langmap=jsx:.jsx
+--regex-jsx=/([A-Z]+[A-Za-z0-9._$]*)[ \t]*[:=][ \t]*mobxReact.observer\(\s*React.createClass/\1/,class/
 --regex-jsx=/([A-Z]+[A-Za-z0-9._$]*)[ \t]*[:=][ \t]*React.createClass/\1/,class/
 --regex-jsx=/([A-Za-z0-9._$]*)[ \t]*[:=][ \t]*function\(/\1/,function/
 --regex-jsx=/function[ \t]*([A-Za-z0-9._$]*)[ \t]*\(/\1/,function/
+--regex-jsx=/var[ \t]+([A-Z]+[A-Za-z0-9._$]*)[ \t]*[=][ \t]*\{/\1/,namespace/
+--regex-jsx=/([A-Za-z0-9._$]*)[ \t]*[:=][ \t]*new\s+/\1/,object/
 
 --langdef=asp
 --langmap=asp:.asp
