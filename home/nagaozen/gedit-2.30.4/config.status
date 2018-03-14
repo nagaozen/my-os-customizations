@@ -449,7 +449,7 @@ Copyright (C) 2010 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/home/nagaozen/git/gedit-2.30.4'
+ac_pwd='/home/nagaozen/git/my-os-customizations/home/nagaozen/gedit-2.30.4'
 srcdir='.'
 INSTALL='/usr/bin/install -c'
 MKDIR_P='/usr/bin/mkdir -p'
@@ -670,8 +670,8 @@ postuninstall_cmds=''
 finish_cmds='PATH="\$PATH:/sbin" ldconfig -n $libdir'
 finish_eval=''
 hardcode_into_libs='yes'
-sys_lib_search_path_spec='/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1 /usr/lib /lib '
-sys_lib_dlsearch_path_spec='/lib64 /usr/lib64 /lib /usr/lib /usr/lib/libfakeroot /usr/lib/ /usr/lib/ffmpeg2.8/ /usr/lib32 '
+sys_lib_search_path_spec='/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0 /usr/lib /lib '
+sys_lib_dlsearch_path_spec='/lib64 /usr/lib64 /lib /usr/lib /usr/lib/ /usr/lib/ffmpeg2.8/ /usr/lib/libfakeroot /usr/lib32 '
 hardcode_action='immediate'
 enable_dlopen='unknown'
 enable_dlopen_self='unknown'
@@ -859,8 +859,8 @@ S["am__EXEEXT_FALSE"]=""
 S["am__EXEEXT_TRUE"]="#"
 S["LTLIBOBJS"]=""
 S["LIBOBJS"]=""
-S["HAVE_GNOME_DOC_UTILS_FALSE"]=""
-S["HAVE_GNOME_DOC_UTILS_TRUE"]="#"
+S["HAVE_GNOME_DOC_UTILS_FALSE"]="#"
+S["HAVE_GNOME_DOC_UTILS_TRUE"]=""
 S["DISTCHECK_CONFIGURE_FLAGS"]="--disable-scrollkeeper "
 S["ENABLE_SK_FALSE"]=""
 S["ENABLE_SK_TRUE"]="#"
@@ -887,10 +887,9 @@ S["PYGTK_DEFSDIR"]="/usr/share/pygtk/2.0/defs"
 S["PYGTK_LIBS"]="-lgtksourceview-2.0 -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2"\
 ".0 -lglib-2.0 -lfontconfig -lfreetype"
 S["PYGTK_CFLAGS"]="-pthread -I/usr/include/pygtk-2.0 -I/usr/lib/libffi-3.2.1/include -I/usr/include/gtksourceview-2.0 -I/usr/include/libxml2 -I/usr/include/gtk-2.0 -I/"\
-"usr/lib/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/libdrm -I/usr/in"\
-"clude/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/harfbuzz -I/us"\
-"r/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/u"\
-"sr/lib/glib-2.0/include"
+"usr/lib/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -"\
+"I/usr/include/pango-1.0 -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include"\
+" -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include"
 S["PYTHON_EXTRA_LIBS"]=" 		-lpthread -ldl  -lutil"
 S["PYTHON_CFLAGS"]="-I/usr/include/python2.7"
 S["PYTHON_LIB_LOC"]="-L/usr/lib/python2.7/config"
@@ -920,10 +919,9 @@ S["X11_CFLAGS"]=""
 S["GEDIT_LIBS"]="-lxml2 -lgthread-2.0 -pthread -lgtksourceview-2.0 -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangof"\
 "t2-1.0 -lpango-1.0 -lgobject-2.0 -lfontconfig -lfreetype -lgconf-2 -lglib-2.0 -lX11"
 S["GEDIT_CFLAGS"]="-pthread -I/usr/include/gtksourceview-2.0 -I/usr/include/libxml2 -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/i"\
-"nclude/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/libdrm -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/inclu"\
-"de/pango-1.0 -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/inc"\
-"lude/freetype2 -I/usr/include/libpng16 -I/usr/include/harfbuzz -I/usr/include/gconf/2 -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include -I/usr/inc"\
-"lude/glib-2.0 -I/usr/lib/glib-2.0/include "
+"nclude/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/pango-1.0 -I/usr/include/freetype2 -I/usr/i"\
+"nclude/libpng16 -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/"\
+"include/harfbuzz -I/usr/include/gconf/2 -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include "
 S["ENABLE_ENCHANT_FALSE"]="#"
 S["ENABLE_ENCHANT_TRUE"]=""
 S["ENCHANT_LIBS"]="-lenchant"
@@ -1021,9 +1019,9 @@ S["GTK_DOC_BUILD_HTML_TRUE"]=""
 S["ENABLE_GTK_DOC_FALSE"]=""
 S["ENABLE_GTK_DOC_TRUE"]="#"
 S["HTML_DIR"]="${datadir}/gtk-doc/html"
-S["GTKDOC_MKPDF"]="/usr/bin/gtkdoc-mkpdf"
-S["GTKDOC_REBASE"]="/usr/bin/gtkdoc-rebase"
-S["GTKDOC_CHECK"]="/usr/bin/gtkdoc-check"
+S["GTKDOC_MKPDF"]=""
+S["GTKDOC_REBASE"]="true"
+S["GTKDOC_CHECK"]=""
 S["GCONFTOOL"]="/usr/bin/gconftool-2"
 S["GEDIT_API_VERSION"]="2.20"
 S["CPP"]="gcc -E"
@@ -1085,7 +1083,7 @@ S["MAINTAINER_MODE_FALSE"]=""
 S["MAINTAINER_MODE_TRUE"]="#"
 S["am__untar"]="${AMTAR} xf -"
 S["am__tar"]="${AMTAR} chof - \"$$tardir\""
-S["AMTAR"]="${SHELL} /home/nagaozen/git/gedit-2.30.4/missing --run tar"
+S["AMTAR"]="${SHELL} /home/nagaozen/git/my-os-customizations/home/nagaozen/gedit-2.30.4/missing --run tar"
 S["am__leading_dot"]="."
 S["SET_MAKE"]=""
 S["AWK"]="gawk"
@@ -1093,12 +1091,12 @@ S["mkdir_p"]="/usr/bin/mkdir -p"
 S["MKDIR_P"]="/usr/bin/mkdir -p"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]="strip"
-S["install_sh"]="${SHELL} /home/nagaozen/git/gedit-2.30.4/install-sh"
-S["MAKEINFO"]="${SHELL} /home/nagaozen/git/gedit-2.30.4/missing --run makeinfo"
-S["AUTOHEADER"]="${SHELL} /home/nagaozen/git/gedit-2.30.4/missing --run autoheader"
-S["AUTOMAKE"]="${SHELL} /home/nagaozen/git/gedit-2.30.4/missing --run automake-1.11"
-S["AUTOCONF"]="${SHELL} /home/nagaozen/git/gedit-2.30.4/missing --run autoconf"
-S["ACLOCAL"]="${SHELL} /home/nagaozen/git/gedit-2.30.4/missing --run aclocal-1.11"
+S["install_sh"]="${SHELL} /home/nagaozen/git/my-os-customizations/home/nagaozen/gedit-2.30.4/install-sh"
+S["MAKEINFO"]="${SHELL} /home/nagaozen/git/my-os-customizations/home/nagaozen/gedit-2.30.4/missing --run makeinfo"
+S["AUTOHEADER"]="${SHELL} /home/nagaozen/git/my-os-customizations/home/nagaozen/gedit-2.30.4/missing --run autoheader"
+S["AUTOMAKE"]="${SHELL} /home/nagaozen/git/my-os-customizations/home/nagaozen/gedit-2.30.4/missing --run automake-1.11"
+S["AUTOCONF"]="${SHELL} /home/nagaozen/git/my-os-customizations/home/nagaozen/gedit-2.30.4/missing --run autoconf"
+S["ACLOCAL"]="${SHELL} /home/nagaozen/git/my-os-customizations/home/nagaozen/gedit-2.30.4/missing --run aclocal-1.11"
 S["VERSION"]="2.30.4"
 S["PACKAGE"]="gedit"
 S["CYGPATH_W"]="echo"

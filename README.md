@@ -44,6 +44,12 @@ copy gedit-plugins:
 $ sudo cp -r usr /
 ```
 
+# System Monitor
+
+```sh
+$ yaourt xfce4-multiload-ng-plugin-gtk3
+```
+
 # Themes and Icons
 
 ```sh

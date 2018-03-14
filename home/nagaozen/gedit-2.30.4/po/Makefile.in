@@ -36,7 +36,7 @@ libdir = ${exec_prefix}/lib
 DATADIRNAME = share
 itlocaledir = $(prefix)/$(DATADIRNAME)/locale
 subdir = po
-install_sh = ${SHELL} /home/nagaozen/git/gedit-2.30.4/install-sh
+install_sh = ${SHELL} /home/nagaozen/git/my-os-customizations/home/nagaozen/gedit-2.30.4/install-sh
 # Automake >= 1.8 provides /usr/bin/mkdir -p.
 # Until it can be supposed, use the safe fallback:
 mkdir_p = $(install_sh) -d

@@ -5,35 +5,44 @@ gedit-smart-charset-converter.lo: gedit-smart-charset-converter.c \
  /usr/include/glib-2.0/glib/galloca.h /usr/include/glib-2.0/glib/gtypes.h \
  /usr/lib/glib-2.0/include/glibconfig.h \
  /usr/include/glib-2.0/glib/gmacros.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include/stddef.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include-fixed/limits.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include-fixed/syslimits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include/stddef.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/bits/long-double.h \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
  /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
  /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include/float.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include/float.h \
  /usr/include/glib-2.0/glib/gversionmacros.h /usr/include/time.h \
  /usr/include/bits/time.h /usr/include/bits/types.h \
  /usr/include/bits/typesizes.h /usr/include/bits/types/clock_t.h \
  /usr/include/bits/types/time_t.h /usr/include/bits/types/struct_tm.h \
  /usr/include/bits/types/struct_timespec.h \
  /usr/include/bits/types/clockid_t.h /usr/include/bits/types/timer_t.h \
- /usr/include/bits/types/struct_itimerspec.h /usr/include/xlocale.h \
+ /usr/include/bits/types/struct_itimerspec.h \
+ /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
  /usr/include/glib-2.0/glib/garray.h \
  /usr/include/glib-2.0/glib/gasyncqueue.h \
  /usr/include/glib-2.0/glib/gthread.h \
  /usr/include/glib-2.0/glib/gatomic.h /usr/include/glib-2.0/glib/gerror.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include/stdarg.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include/stdarg.h \
  /usr/include/glib-2.0/glib/gquark.h /usr/include/glib-2.0/glib/gutils.h \
  /usr/include/glib-2.0/glib/gbacktrace.h /usr/include/signal.h \
- /usr/include/bits/sigset.h /usr/include/bits/signum.h \
- /usr/include/bits/siginfo.h /usr/include/bits/sigaction.h \
- /usr/include/bits/sigcontext.h /usr/include/bits/sigstack.h \
- /usr/include/sys/ucontext.h /usr/include/bits/pthreadtypes.h \
- /usr/include/bits/sigthread.h /usr/include/glib-2.0/glib/gbase64.h \
+ /usr/include/bits/signum.h /usr/include/bits/signum-generic.h \
+ /usr/include/bits/types/sig_atomic_t.h \
+ /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \
+ /usr/include/bits/types/siginfo_t.h /usr/include/bits/types/sigval_t.h \
+ /usr/include/bits/siginfo-arch.h /usr/include/bits/siginfo-consts.h \
+ /usr/include/bits/types/sigevent_t.h /usr/include/bits/sigevent-consts.h \
+ /usr/include/bits/sigaction.h /usr/include/bits/sigcontext.h \
+ /usr/include/bits/types/stack_t.h /usr/include/sys/ucontext.h \
+ /usr/include/bits/sigstack.h /usr/include/bits/ss_flags.h \
+ /usr/include/bits/types/struct_sigstack.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
+ /usr/include/bits/pthreadtypes-arch.h /usr/include/bits/sigthread.h \
+ /usr/include/glib-2.0/glib/gbase64.h \
  /usr/include/glib-2.0/glib/gbitlock.h \
  /usr/include/glib-2.0/glib/gbookmarkfile.h \
  /usr/include/glib-2.0/glib/gbytes.h \
@@ -86,13 +95,14 @@ gedit-smart-charset-converter.lo: gedit-smart-charset-converter.c \
  /usr/include/glib-2.0/glib/deprecated/gmain.h \
  /usr/include/glib-2.0/glib/deprecated/grel.h \
  /usr/include/glib-2.0/glib/deprecated/gthread.h /usr/include/sys/types.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/byteswap-16.h \
- /usr/include/bits/uintn-identity.h /usr/include/sys/select.h \
- /usr/include/bits/select.h /usr/include/bits/types/struct_timeval.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/sysmacros.h \
- /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
- /usr/include/bits/setjmp.h \
+ /usr/include/bits/stdint-intn.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/bits/byteswap-16.h /usr/include/bits/uintn-identity.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/types/struct_timeval.h /usr/include/sys/sysmacros.h \
+ /usr/include/bits/sysmacros.h /usr/include/pthread.h \
+ /usr/include/sched.h /usr/include/bits/sched.h \
+ /usr/include/bits/cpu-set.h /usr/include/bits/setjmp.h \
  /usr/include/glib-2.0/glib/glib-autocleanups.h \
  /usr/include/glib-2.0/gobject/gobject.h \
  /usr/include/glib-2.0/gobject/gtype.h \
@@ -138,7 +148,8 @@ gedit-smart-charset-converter.lo: gedit-smart-charset-converter.c \
  /usr/include/glib-2.0/gio/gconverteroutputstream.h \
  /usr/include/glib-2.0/gio/gcredentials.h /usr/include/unistd.h \
  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
- /usr/include/bits/confname.h /usr/include/getopt.h \
+ /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
+ /usr/include/bits/getopt_core.h \
  /usr/include/glib-2.0/gio/gdatagrambased.h \
  /usr/include/glib-2.0/gio/gdatainputstream.h \
  /usr/include/glib-2.0/gio/gdataoutputstream.h \
@@ -287,9 +298,11 @@ gedit-smart-charset-converter.lo: gedit-smart-charset-converter.c \
  /usr/include/pango-1.0/pango/pango-tabs.h \
  /usr/include/pango-1.0/pango/pango-renderer.h \
  /usr/include/pango-1.0/pango/pango-utils.h /usr/include/stdio.h \
- /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/bits/stdio.h /usr/lib/gtk-2.0/include/gdkconfig.h \
+ /usr/include/bits/types/__FILE.h /usr/include/bits/types/FILE.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/bits/types/__mbstate_t.h /usr/include/bits/stdio_lim.h \
+ /usr/include/bits/sys_errlist.h /usr/include/bits/stdio.h \
+ /usr/lib/gtk-2.0/include/gdkconfig.h \
  /usr/include/gtk-2.0/gdk/gdkdisplay.h \
  /usr/include/gtk-2.0/gdk/gdkevents.h /usr/include/gtk-2.0/gdk/gdkcolor.h \
  /usr/include/gtk-2.0/gdk/gdkdnd.h /usr/include/gtk-2.0/gdk/gdkinput.h \
@@ -554,8 +567,7 @@ gedit-smart-charset-converter.lo: gedit-smart-charset-converter.c \
  /usr/include/gtksourceview-2.0/gtksourceview/gtksourceundomanager.h \
  ../gedit/gedit-encodings.h /usr/include/glib-2.0/glib/gi18n.h \
  /usr/include/libintl.h /usr/include/locale.h /usr/include/bits/locale.h \
- /usr/include/string.h /usr/include/bits/string.h \
- /usr/include/bits/string2.h /usr/include/stdlib.h
+ /usr/include/string.h /usr/include/strings.h
 
 /usr/include/stdc-predef.h:
 
@@ -575,11 +587,11 @@ gedit-smart-charset-converter.h:
 
 /usr/include/glib-2.0/glib/gmacros.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include/stddef.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include/stddef.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include-fixed/limits.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed/limits.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include-fixed/syslimits.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed/syslimits.h:
 
 /usr/include/limits.h:
 
@@ -605,7 +617,7 @@ gedit-smart-charset-converter.h:
 
 /usr/include/bits/posix2_lim.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include/float.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include/float.h:
 
 /usr/include/glib-2.0/glib/gversionmacros.h:
 
@@ -631,7 +643,9 @@ gedit-smart-charset-converter.h:
 
 /usr/include/bits/types/struct_itimerspec.h:
 
-/usr/include/xlocale.h:
+/usr/include/bits/types/locale_t.h:
+
+/usr/include/bits/types/__locale_t.h:
 
 /usr/include/glib-2.0/glib/garray.h:
 
@@ -643,7 +657,7 @@ gedit-smart-charset-converter.h:
 
 /usr/include/glib-2.0/glib/gerror.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include/stdarg.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include/stdarg.h:
 
 /usr/include/glib-2.0/glib/gquark.h:
 
@@ -653,21 +667,47 @@ gedit-smart-charset-converter.h:
 
 /usr/include/signal.h:
 
-/usr/include/bits/sigset.h:
-
 /usr/include/bits/signum.h:
 
-/usr/include/bits/siginfo.h:
+/usr/include/bits/signum-generic.h:
+
+/usr/include/bits/types/sig_atomic_t.h:
+
+/usr/include/bits/types/sigset_t.h:
+
+/usr/include/bits/types/__sigset_t.h:
+
+/usr/include/bits/types/siginfo_t.h:
+
+/usr/include/bits/types/sigval_t.h:
+
+/usr/include/bits/siginfo-arch.h:
+
+/usr/include/bits/siginfo-consts.h:
+
+/usr/include/bits/types/sigevent_t.h:
+
+/usr/include/bits/sigevent-consts.h:
 
 /usr/include/bits/sigaction.h:
 
 /usr/include/bits/sigcontext.h:
 
-/usr/include/bits/sigstack.h:
+/usr/include/bits/types/stack_t.h:
 
 /usr/include/sys/ucontext.h:
 
+/usr/include/bits/sigstack.h:
+
+/usr/include/bits/ss_flags.h:
+
+/usr/include/bits/types/struct_sigstack.h:
+
 /usr/include/bits/pthreadtypes.h:
+
+/usr/include/bits/thread-shared-types.h:
+
+/usr/include/bits/pthreadtypes-arch.h:
 
 /usr/include/bits/sigthread.h:
 
@@ -803,6 +843,8 @@ gedit-smart-charset-converter.h:
 
 /usr/include/sys/types.h:
 
+/usr/include/bits/stdint-intn.h:
+
 /usr/include/endian.h:
 
 /usr/include/bits/endian.h:
@@ -828,6 +870,8 @@ gedit-smart-charset-converter.h:
 /usr/include/sched.h:
 
 /usr/include/bits/sched.h:
+
+/usr/include/bits/cpu-set.h:
 
 /usr/include/bits/setjmp.h:
 
@@ -935,7 +979,9 @@ gedit-document.h:
 
 /usr/include/bits/confname.h:
 
-/usr/include/getopt.h:
+/usr/include/bits/getopt_posix.h:
+
+/usr/include/bits/getopt_core.h:
 
 /usr/include/glib-2.0/gio/gdatagrambased.h:
 
@@ -1253,11 +1299,15 @@ gedit-document.h:
 
 /usr/include/stdio.h:
 
+/usr/include/bits/types/__FILE.h:
+
+/usr/include/bits/types/FILE.h:
+
 /usr/include/libio.h:
 
 /usr/include/_G_config.h:
 
-/usr/include/wchar.h:
+/usr/include/bits/types/__mbstate_t.h:
 
 /usr/include/bits/stdio_lim.h:
 
@@ -1855,8 +1905,4 @@ gedit-document.h:
 
 /usr/include/string.h:
 
-/usr/include/bits/string.h:
-
-/usr/include/bits/string2.h:
-
-/usr/include/stdlib.h:
+/usr/include/strings.h:
