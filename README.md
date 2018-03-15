@@ -44,7 +44,7 @@ copy gedit-plugins:
 $ sudo cp -r usr /
 ```
 
-## Webkit for python2 (optional)
+## webkit package for python2 (optional)
 
 NOTE: Only required for using Webkit inside gedit!
 
@@ -61,7 +61,7 @@ $ yaourt xfce4-multiload-ng-plugin-gtk3
 # Themes and Icons
 
 ```sh
-$ sudo pacman -S adapta-maia-theme
+$ yaourt adapta-maia-theme
 $ yaourt papirus-icon-theme-git
 $ yaourt papirus-libreoffice-theme
 
