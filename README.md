@@ -17,7 +17,7 @@ Just merge all folders, except `/home/` as mentioned before, to the file system 
 `/home/nagaozen/` comes with a modified version of ctags, gedit e gedit plugins. You must install dependencies before trying to compile:
 
 ```sh
-$ yaourt -S gconf gcolor2 pygtksourceview2 enchant desktop-file-utils iso-codes libsm python2 python2-gconf vte
+$ yaourt -S gconf gcolor2 pygtksourceview2 enchant1.6 desktop-file-utils iso-codes libsm python2 python2-gconf vte
 $ yaourt -S gnome-doc-utils intltool
 ```
 
@@ -33,7 +33,7 @@ compile gedit:
 
 ```sh
 $ export PYTHON=/usr/bin/python2
-$ ./configure --disable-scrollkeeper --disable-spell --enable-python
+$ ./configure --disable-scrollkeeper --enable-python
 $ make LDFLAGS="$LDFLAGS -lgmodule-2.0 -lICE"
 $ sudo make install
 ```
@@ -42,6 +42,14 @@ copy gedit-plugins:
 
 ```sh
 $ sudo cp -r usr /
+```
+
+## Webkit for python2 (optional)
+
+NOTE: Only required for using Webkit inside gedit!
+
+```sh
+$ yaourt -S icu59 webkitgtk2 pywebkitgtk
 ```
 
 # System Monitor
