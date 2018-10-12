@@ -17,7 +17,7 @@ Just merge all folders, except `/home/` as mentioned before, to the file system 
 `/home/nagaozen/` comes with a modified version of ctags, gedit e gedit plugins. You must install dependencies before trying to compile:
 
 ```sh
-$ yaourt -S gconf gcolor2 pygtksourceview2 enchant1.6 desktop-file-utils iso-codes libsm python2 python2-gconf vte
+$ yaourt -S gconf gcolor2 pygtksourceview2 enchant1.6 desktop-file-utils iso-codes libsm python2 python2-gconf vte-legacy
 $ yaourt -S gnome-doc-utils intltool
 ```
 
